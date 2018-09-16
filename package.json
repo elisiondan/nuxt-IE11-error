@@ -18,7 +18,7 @@
     "elision-helpers": "^0.2.2",
     "event-source-polyfill": "0.0.16",
     "gsap": "^2.0.2",
-    "nuxt": "^1.0.0"
+    "nuxt": "^1.4.2"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
