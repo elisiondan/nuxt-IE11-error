@@ -1,23 +1,32 @@
-# en
+# Description of the error
+A minimalistic repo that mimics my current project to reproduce errors in IE11 that seem to be related to namespaced store.
 
-> Nuxt.js project
+When a module folder in store is included in the dev build, it leads to the current error in IE 11.
+![alt text](/static/error.png)
 
-## Build Setup
 
-``` bash
-# install dependencies
-$ npm install # Or yarn install
+These errors expand to followings.
 
-# serve with hot reload at localhost:3000
-$ npm run dev
 
-# build for production and launch server
-$ npm run build
-$ npm start
+_script 1002_
 
-# generate static project
-$ npm run generate
-```
+![script 1002](/static/script1002.png)
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
 
+_script 5007_
+
+![script 1002](/static/script5007.png)
+
+___
+
+However, when the modules folder is deleted, the error disappears.
+I use `babel-polyfill` and `event-source-polyfill` in the `nuxt.config.js`, however that did not solve the issue.
+
+
+# Steps to reproduce
+1. Install dependencies and open `http://localhost:3000/cs` in IE 11
+2. `npm run dev`
+3. The errors should pop-up in the console
+4. Remove modules folder from store
+5. Stop the dev build and run it again. Open a new window in the browser to assure nothing is cached
+6. The errors should not appear this time 
