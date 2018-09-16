@@ -19,7 +19,7 @@ _script 5007_
 
 ___
 
-However, when the modules folder is deleted, the error disappears.
+However, when the modules folder is deleted, the error disappears. The weirdest part is that I do not even load the modules folder in `store/index.js`.
 I use `babel-polyfill` and `event-source-polyfill` in the `nuxt.config.js`, however that did not solve the issue.
 
 
